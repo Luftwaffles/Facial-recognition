@@ -20,7 +20,7 @@ while True:
         success, img = cap.read()
 
         imgBackground[162:162 + 480, 55:55 + 640] = img
-        imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[0]
+        imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[1]
 
         # cv2.imshow("Webcam", img)
         cv2.imshow("Face Attendance", imgBackground)
