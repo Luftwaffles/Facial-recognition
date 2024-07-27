@@ -1,6 +1,6 @@
 import cv2
 import face_recognition
-# import pickle
+import pickle
 import os
 
 # Importing the student images
@@ -26,5 +26,10 @@ def findEncodings(imagesList):
         return encodeList
 print("Encoding Started...")
 encodeListKnown = findEncodings(imgList)
-print(encodeListKnown)
+encodeListKnownWithIds = [encodeListKnown, studentIds]
 print("Encoding Complete")
+
+file = open("EncodeFile.p", 'wb')
+pickle.dump(encodeListKnownWithIds, file)
+file.close()
+print("File Saved")
