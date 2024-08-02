@@ -85,6 +85,10 @@ while True:
                         blob = bucket.get_blob(f'Images/{id}.png')
                         array = np.frombuffer(blob.download_as_string(), np.uint8)
                         imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)
+                        # Update data of attendance
+                        ref = db.reference(f'Students/{id}')
+                        studentInfo['total_attendance'] += 1
+                        ref.child('total_attendance').set(studentInfo['total_attendance'])
 
                 cv2.putText(imgBackground, str(studentInfo['total_attendance']), (861, 125),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
