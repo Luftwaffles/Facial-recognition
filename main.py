@@ -90,6 +90,11 @@ while True:
                         studentInfo['total_attendance'] += 1
                         ref.child('total_attendance').set(studentInfo['total_attendance'])
 
+                if 10 < counter < 20:
+                        modeType = 2
+
+                imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[modeType]
+
                 cv2.putText(imgBackground, str(studentInfo['total_attendance']), (861, 125),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
                 cv2.putText(imgBackground, str(studentInfo['major']), (1006, 550),

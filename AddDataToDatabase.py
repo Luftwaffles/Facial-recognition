@@ -40,6 +40,24 @@ data = {
             "year": 4,
             "last_attendance_time": "2024-7-29 13:32:45"
         },
+    "100001":
+        {
+            "name": "Elon Musk",
+            "major": "engineering",
+            "starting_year": 2022,
+            "total_attendance": 69,
+            "year": 6,
+            "last_attendance_time": "2024-7-29 13:32:45"
+        },
+    "100002":
+        {
+            "name": "Emily Blunt",
+            "major": "fashion",
+            "starting_year": 2015,
+            "total_attendance": 42,
+            "year": 3,
+            "last_attendance_time": "2024-7-29 13:32:45"
+        },
 }
 
 for key, value in data.items():
